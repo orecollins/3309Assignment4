@@ -1,5 +1,4 @@
 const express = require('express');
-//let productList = require('./products.json');
 const newConnection = require('./DBConnection');
 
 const app = express();
