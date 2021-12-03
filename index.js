@@ -59,4 +59,8 @@ app.get('/products', (request, response) => {
     conn.end();
 })
 
+// app.get('/openPromotion',(req,res) =>{
+//     res.redirect(./)
+// })
+
 app.listen(2000);
