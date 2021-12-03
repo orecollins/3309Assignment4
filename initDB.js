@@ -1,23 +1,35 @@
 const mysql = require('mysql');
 
 let conn = mysql.createConnection({
-    host:'localhost',
+    host: 'localhost',
     user: 'root',
-    password:'your_current_password',
-    database:'amusement'
+    password: 'your_current_password',
+    database: 'amusement'
 });
 
 conn.connect();
 
-conn.query( `SELECT fName FROM Customer WHERE email="1dd@gmail.com" `
-            , (err,rows,fields) => {
-                if (err)
-                    console.log(err);
-                else
-                    console.log('One row inserted');
-                for (r of rows)
-                    console.log(r);
-            });
+conn.query(`SELECT fName FROM Customer WHERE email="1dd@gmail.com" `
+    , (err, rows, fields) => {
+        if (err)
+            console.log(err);
+        else
+            console.log('One row inserted');
+        for (r of rows)
+            console.log(r);
+    });
+conn.query(`SELECT COUNT(employeeEmail)
+            FROM employeeschedule
+            WHERE "10:57:00">=startTime AND "10:57:00<=endTime"`
+    , (err, rows, fields) => {
+        if (err)
+            console.log(err);
+        else
+            console.log('One row inserted');
+        for (r of rows)
+            console.log(r);
+    });
+//shows how many employees are working at a given time
 
 // conn.query(`Drop Table Product`,
 //                 (err,rows,fields) => {
