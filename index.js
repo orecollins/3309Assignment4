@@ -19,6 +19,8 @@ app.get('/add-product', (req,res) => {
     conn.end();
 })
 
+//hi
+
 app.get('/prod-img', (request,response) =>{
     let content = '';
     let imgpath = request.query.path;
